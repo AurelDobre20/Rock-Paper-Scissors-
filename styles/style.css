@@ -1,0 +1,68 @@
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+.container{
+    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    justify-content: space-between;
+   
+}
+.scoreBoard{
+    background: red;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+   
+}
+.game{
+    background: black;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    
+}
+.rock, .paper, .scissors{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    background: white;
+    
+}
+
+.scissors img{
+    height: 200px;
+    width: 200px;
+    
+}
+
+.paper img{
+    height: 200px;
+    width: 200px;
+}
+.rock img{
+    height: 200px;
+    width: 200px;
+}
+
+.playerScore, .computerScore{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    background: white;
+    justify-content: center;
+    align-items: center;
+}
