@@ -61,32 +61,32 @@ function playRound (playerSelection, computerSelection  ){
     let p =playerSelection.trim();
     p.toLowerCase();
     let c = computerSelection.toLowerCase();
-    if(playerSelection!=="paper" && playerSelection!=="rock" && playerSelection!=="scissors"){
-        return "Invalid input!";
-    }
-    else if(whoWins(p, c )=== 2){
-        return "Computer wins! Paper beats Rock";
-    }
-    else if(whoWins(p, c ) === 1){
-        return "You win! Paper beats Rock";
-    }
-    else if(whoWins(p, c ) === 4 ){
-        return "You win! Scissors beats Paper";
-    }
-    else if(whoWins(p, c ) === 3){
-        return "Computer wins! Scissors beats Paper";
-    }
-    else if(whoWins(p, c ) === 6){
-        return "Computer wins! Rock beats Scissors";
-    }
-    else if(whoWins(p, c ) === 5){
-        return "You win! Rock beats Scissors";
-    }
-    
-    
-    else{
+    if(whoWins(p, c )> 6){
         return "Draw";
     }
+    // else if(whoWins(p, c )=== 2){
+    //     return "Computer wins! Paper beats Rock";
+    // }
+    // else if(whoWins(p, c ) === 1){
+    //     return "You win! Paper beats Rock";
+    // }
+    // else if(whoWins(p, c ) === 4 ){
+    //     return "You win! Scissors beats Paper";
+    // }
+    // else if(whoWins(p, c ) === 3){
+    //     return "Computer wins! Scissors beats Paper";
+    // }
+    // else if(whoWins(p, c ) === 6){
+    //     return "Computer wins! Rock beats Scissors";
+    // }
+    // else if(whoWins(p, c ) === 5){
+    //     return "You win! Rock beats Scissors";
+    // }
+    
+    
+    // else{
+    //     return "Draw";
+    // }
     
     
 }
