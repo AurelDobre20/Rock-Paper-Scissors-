@@ -47,6 +47,9 @@ function whoWins(playerSelection, computerSelection){
 
         return 6;
     }
+    else{
+        return 7;
+    }
     
 }
 
@@ -64,27 +67,27 @@ function playRound (playerSelection, computerSelection  ){
     if(whoWins(p, c )> 6){
         return "Draw";
     }
-    // else if(whoWins(p, c )=== 2){
-    //     return "Computer wins! Paper beats Rock";
-    // }
-    // else if(whoWins(p, c ) === 1){
-    //     return "You win! Paper beats Rock";
-    // }
-    // else if(whoWins(p, c ) === 4 ){
-    //     return "You win! Scissors beats Paper";
-    // }
-    // else if(whoWins(p, c ) === 3){
-    //     return "Computer wins! Scissors beats Paper";
-    // }
-    // else if(whoWins(p, c ) === 6){
-    //     return "Computer wins! Rock beats Scissors";
-    // }
-    // else if(whoWins(p, c ) === 5){
-    //     return "You win! Rock beats Scissors";
-    // }
+    else if(whoWins(p, c )=== 2){
+        return "Computer wins! Paper beats Rock";
+    }
+    else if(whoWins(p, c ) === 1){
+        return "You win! Paper beats Rock";
+    }
+    else if(whoWins(p, c ) === 4 ){
+        return "You win! Scissors beats Paper";
+    }
+    else if(whoWins(p, c ) === 3){
+        return "Computer wins! Scissors beats Paper";
+    }
+    else if(whoWins(p, c ) === 6){
+        return "Computer wins! Rock beats Scissors";
+    }
+    else if(whoWins(p, c ) === 5){
+        return "You win! Rock beats Scissors";
+    }
     
     
-    // else{
+    //else{
     //     return "Draw";
     // }
     
@@ -97,6 +100,12 @@ const computerScoreEle = document.querySelector('#computer');
 
 let playerScore = 0;
 let computerScore = 0;
+
+const dialog1Ele = document.querySelector('#dialog1');
+var dialog2Ele = document.querySelector('#dialog2');
+
+let d1 ="";
+let d2= "";
 
 
 let rock = document.getElementById("btnRock");
@@ -131,12 +140,17 @@ function game(answer){
     
 
     if(pRoundString === "Draw"){
-        return;
+        dialog2Ele.textContent= pRoundString;
+        //console.log(dialog2Ele);
+        //return;
     }
     else if(playerScore===5 || computerScore===5){
         console.log("Player score: " + playerScore);
         console.log("Computer score: " + computerScore);
         console.log( "The player wins!");
+
+        dialog2Ele.textContent= pRoundString;
+
         playerScore = 0;
         computerScore = 0;
         playerScoreEle.textContent = playerScore;
