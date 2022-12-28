@@ -26,10 +26,11 @@ body {
 .game{
     background: blue;
     display: flex;
+    flex-direction: column;
     flex: 1 1 auto;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    
     
 }
 .btn{
@@ -75,4 +76,25 @@ body {
     justify-content: center;
     align-items: center;
     gap: 80px;
+}
+
+.btns{
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+   
+}
+#dialog1{
+    
+    margin-top: 100px;
+    margin-bottom: 20px;
+
+}
+#dialog2{
+    
+    margin-top: 20px;
+    margin-bottom: 100px;
+
 }
