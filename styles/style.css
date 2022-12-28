@@ -44,13 +44,6 @@ body {
     
 }
 
-.btn img{
-    
-    height: 150px;
-    width: 150px;
-    
-}
-
 .Score{
     height: 100px;
     width: 100px;
@@ -85,15 +78,27 @@ body {
     justify-content: center;
     align-items: center;
     gap: 40px;
-    
-   
-}
-.btns button, .btn img{
-    border-radius: 50%;
+
+
 }
 
-#dialog1{
+
+button img {
+    width: 100%; /* makes the image fill the button */
+    border-radius: 50%; /* gives the button a rounded shape */
+    object-fit: cover; /* makes the image cover the entire button */
+  }
+#btnRock, #btnPaper, #btnScissors{
     
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%; 
+  }
+
+#dialog1{
+    font-size: 35px;
+
     margin-top: 100px;
     margin-bottom: 20px;
 
@@ -104,4 +109,10 @@ body {
     margin-bottom: 100px;
     font-size: 30px;
 
+}
+h4{
+    font-size: 40px;
+}
+#player, #computer{
+    font-size: 40px;
 }
