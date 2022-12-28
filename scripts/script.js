@@ -114,61 +114,46 @@ btns.forEach((button)=>{button.addEventListener('click', ()=>{
 })})
 
 
-
-let player = 0;
-let computer = 0;
 function game(answer){
     
-    console.log("Let the games begin!")
-    let counter = 5;
+    console.log("Let the games begin!");
+     console.log("Player score: " + playerScore);
+    console.log("Computer score: " + computerScore);
     
-        console.log("Player score: " + player);
-        console.log("Computer score: " + computer);
-        
-       
-        const cChoice= getComputerChoice();
-        
-        console.log("Your choice: " + answer);
-        console.log("Computer weapon: " + cChoice);
-        let pRoundString = playRound (answer, cChoice);
-       
-        let wWins = whoWins(answer, cChoice);
+    const cChoice= getComputerChoice();
+    
+    let pRoundString = playRound (answer, cChoice);
+    
+    let wWins = whoWins(answer, cChoice);
 
-        playerScore = player;
+    playerScoreEle.textContent = playerScore;
+    computerScoreEle.textContent = computerScore;
+    
+
+    if(pRoundString === "Draw"){
+        return;
+    }
+    else if(playerScore===5 || computerScore===5){
+        console.log("Player score: " + playerScore);
+        console.log("Computer score: " + computerScore);
+        console.log( "The player wins!");
+        playerScore = 0;
+        computerScore = 0;
         playerScoreEle.textContent = playerScore;
-
-        computerScore = computer;
         computerScoreEle.textContent = computerScore;
-       
-
-        if(pRoundString === "Draw"){
-            return;
-        }
         
-        else if(wWins === 1 || wWins === 4 || wWins === 5 ){
-            player++;
-            
-        }
-        else if(wWins === 2 || wWins === 3 || wWins === 6){
-            computer++;
-        }
-        else if(player===3){
-            console.log("Player score: " + player);
-            console.log("Computer score: " + computer);
-            console.log( "The player wins!");
-            
-            //counter=counter-20;
-            
-        }
-        else if (computer===3){
-            console.log("Player score: " + player);
-            console.log("Computer score: " + computer);
-            console.log("The computer wins!");
-            //counter=counter-20;
-        }
-         
+        //counter=counter-20;
         
-     }
+    }
+    
+    else if(wWins === 1 || wWins === 4 || wWins === 5 ){
+        playerScore++;
+        
+    }
+    else if(wWins === 2 || wWins === 3 || wWins === 6){
+        computerScore++;
+    }
+ }
     
    
 //}
