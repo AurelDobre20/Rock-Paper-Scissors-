@@ -16,7 +16,7 @@ body {
 .scoreBoard{
     background: red;
     display: flex;
-    flex: 1 1 auto;
+    flex: 1 1  0;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -24,7 +24,7 @@ body {
    
 }
 .game{
-    background: black;
+    background: blue;
     display: flex;
     flex: 1 1 auto;
     justify-content: center;
@@ -33,8 +33,8 @@ body {
     
 }
 .btn{
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     display: flex;
     flex: 0 0 auto;
     flex-direction: row;
@@ -44,8 +44,8 @@ body {
 
 .btn img{
     
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     
 }
 
