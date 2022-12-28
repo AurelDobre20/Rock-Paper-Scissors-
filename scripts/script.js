@@ -120,9 +120,6 @@ btns.forEach((button)=>{button.addEventListener('click', ()=>{
 
 function checkScore(player, computer, pRoundString){
     if(player===5 || computer===5){
-        console.log("Player score: " + player);
-        console.log("Computer score: " + computer);
-        console.log( "The player wins!");
 
         dialog2Ele.textContent= pRoundString;
 
@@ -135,18 +132,13 @@ function checkScore(player, computer, pRoundString){
     }
 }
 
-function game(answer){
-    
-    console.log("Let the games begin!");
-     console.log("Player score: " + playerScore);
-    console.log("Computer score: " + computerScore);
-    
+function game(answer){ 
     const cChoice= getComputerChoice();
     
     let pRoundString = playRound (answer, cChoice);
     
     let wWins = whoWins(answer, cChoice);
-    console.log("pRoundString: " + pRoundString);
+    
 
     playerScoreEle.textContent = playerScore;
     computerScoreEle.textContent = computerScore;
@@ -165,7 +157,7 @@ function game(answer){
         if(checkScore(playerScore, computerScore, pRoundString)){
             return;
         }
-        console.log("wWins: " + wWins);
+        
         
         
     }
@@ -177,7 +169,7 @@ function game(answer){
         if(checkScore(playerScore, computerScore, pRoundString)){
             return;
         }
-        console.log("wWins: " + wWins);
+        
         
     }
  }
