@@ -1,5 +1,5 @@
 
-const prompt = require ("prompt-sync")({sigint: true})
+//const prompt = require ("prompt-sync")({sigint: true})
 function getChoice(no){
     let choices=["scissors","rock","paper"];
     if(no===1){
@@ -13,10 +13,10 @@ function getChoice(no){
     }
 }
 function getChoicePlayer(string){
-    if(string===getChoice(1)){
+    if(string==="btnScissors"){
         return getChoice(1);
     }
-    else if(string===getChoice(2)){
+    else if(string==="btnRock"){
         return getChoice(2);
     }else{
         return getChoice(3);
@@ -91,37 +91,58 @@ function playRound (playerSelection, computerSelection  ){
     
 }
 
+const btns = document.querySelectorAll('.btn')
+const playerScoreEle = document.querySelector('#player');
+const computerScoreEle = document.querySelector('#computer');
+
+let playerScore = 0;
+let computerScore = 0;
 
 
-function game(){
-    let player = 0;
-    let computer = 0;
+let rock = document.getElementById("btnRock");
+function getID(e){
+    const id = document.querySelector(rock.id);
+    console.log(rock.id);
+}
+
+
+
+btns.forEach((button)=>{button.addEventListener('click', ()=>{
+    let ID = button.id;
+    let playerC = getChoicePlayer(ID);
+    game(playerC);
+})})
+
+
+
+let player = 0;
+let computer = 0;
+function game(answer){
+    
     console.log("Let the games begin!")
     let counter = 5;
-    for (let i = 0; i < counter; i++) {
+    
         console.log("Player score: " + player);
         console.log("Computer score: " + computer);
-        let answer= String(prompt("Choose your weapon: "));
+        
+       
         const cChoice= getComputerChoice();
         
-        
+        console.log("Your choice: " + answer);
         console.log("Computer weapon: " + cChoice);
         let pRoundString = playRound (answer, cChoice);
        
-
-        if(pRoundString==="Invalid input!"){
-            console.log("Invalid input!");
-            answer= prompt("Choose a valid weapon: ");
-            pRoundString = playRound (answer, cChoice);
-            counter++;
-        }
-
-
         let wWins = whoWins(answer, cChoice);
-        console.log(i);
-        
+
+        playerScore = player;
+        playerScoreEle.textContent = playerScore;
+
+        computerScore = computer;
+        computerScoreEle.textContent = computerScore;
+       
+
         if(pRoundString === "Draw"){
-            counter++;
+            return;
         }
         
         else if(wWins === 1 || wWins === 4 || wWins === 5 ){
@@ -131,23 +152,84 @@ function game(){
         else if(wWins === 2 || wWins === 3 || wWins === 6){
             computer++;
         }
-        if(player===3){
+        else if(player===3){
             console.log("Player score: " + player);
             console.log("Computer score: " + computer);
             console.log( "The player wins!");
-            counter=counter-20;
+            
+            //counter=counter-20;
             
         }
         else if (computer===3){
             console.log("Player score: " + player);
             console.log("Computer score: " + computer);
             console.log("The computer wins!");
-            counter=counter-20;
+            //counter=counter-20;
         }
          
         
      }
     
    
-}
-game();
+//}
+//game();
+
+// function game(){
+//     let player = 0;
+//     let computer = 0;
+//     console.log("Let the games begin!")
+//     let counter = 5;
+//     for (let i = 0; i < counter; i++) {
+//         console.log("Player score: " + player);
+//         console.log("Computer score: " + computer);
+//         //let answer= String(prompt("Choose your weapon: "));
+        
+//         const cChoice= getComputerChoice();
+        
+        
+//         console.log("Computer weapon: " + cChoice);
+//         let pRoundString = playRound (answer, cChoice);
+       
+
+//         if(pRoundString==="Invalid input!"){
+//             console.log("Invalid input!");
+//             answer= prompt("Choose a valid weapon: ");
+//             pRoundString = playRound (answer, cChoice);
+//             counter++;
+//         }
+
+
+//         let wWins = whoWins(answer, cChoice);
+//         console.log(i);
+
+//         if(pRoundString === "Draw"){
+//             counter++;
+//         }
+        
+//         else if(wWins === 1 || wWins === 4 || wWins === 5 ){
+//             player++;
+            
+//         }
+//         else if(wWins === 2 || wWins === 3 || wWins === 6){
+//             computer++;
+//         }
+//         if(player===3){
+//             console.log("Player score: " + player);
+//             console.log("Computer score: " + computer);
+//             console.log( "The player wins!");
+//             counter=counter-20;
+            
+//         }
+//         else if (computer===3){
+//             console.log("Player score: " + player);
+//             console.log("Computer score: " + computer);
+//             console.log("The computer wins!");
+//             counter=counter-20;
+//         }
+         
+        
+//      }
+    
+   
+// }
+// //game();

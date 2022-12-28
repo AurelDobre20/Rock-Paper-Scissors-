@@ -31,7 +31,7 @@ body {
     gap: 40px;
     
 }
-.rock, .paper, .scissors{
+.btn{
     height: 200px;
     width: 200px;
     display: flex;
@@ -41,22 +41,16 @@ body {
     
 }
 
-.scissors img{
+.btn img{
+    
     height: 200px;
     width: 200px;
     
 }
 
-.paper img{
-    height: 200px;
-    width: 200px;
-}
-.rock img{
-    height: 200px;
-    width: 200px;
-}
 
-.playerScore, .computerScore{
+
+.Score{
     height: 100px;
     width: 100px;
     display: flex;

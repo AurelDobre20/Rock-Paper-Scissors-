@@ -2,34 +2,34 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="styles/style.css"/>
-    <script src="scripts/script.js" type="text/javascript" ></script>
+    <script src="scripts/script.js" type="text/javascript"  defer></script>
     <title>Document</title>
 </head>
 <body>
    
          <div class="container">
             <div class="scoreBoard">
-                <div class="playerScore">
+                <span id="player" class="Score">
                     0
-                </div>
-                <div class="computerScore">
+                </span>
+                <span id="computer" class="Score">
                     0
-                </div>
+                </span>
             </div>
 
             <div class="game">
-                <div class="rock">
+                <button id="btnRock" class="btn" >
                     <img src="assets/rock.jpg" alt="a rock"> 
 
-                </div>
-                <div class="paper">
+                </button>
+                <button id="btnPaper" class="btn">
                     <img src="assets/paper.jpg" alt="a paper"> 
                     
-                </div>
-                <div class="scissors">
+                </button>
+                <button id="btnScissors" class="btn">
                     <img src="assets/scissors.jpg" alt="a scissor"> 
                     
-                </div>
+                </button>
 
             </div>
         </div>
