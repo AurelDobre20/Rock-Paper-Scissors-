@@ -91,23 +91,14 @@ function playRound (playerSelection, computerSelection  ){
 const btns = document.querySelectorAll('.btn')
 const playerScoreEle = document.querySelector('#player');
 const computerScoreEle = document.querySelector('#computer');
+const gameDiv = document.querySelector('.game');
+const referenceNode = gameDiv.children[1];
 
 let playerScore = 0;
 let computerScore = 0;
 
 const dialog1Ele = document.querySelector('#dialog1');
-var dialog2Ele = document.querySelector('#dialog2');
-
-let d1 ="";
-let d2= "";
-
-
-let rock = document.getElementById("btnRock");
-function getID(e){
-    const id = document.querySelector(rock.id);
-    console.log(rock.id);
-}
-
+var dialog2Ele = document.querySelector('.dialog2');
 
 
 btns.forEach((button)=>{button.addEventListener('click', ()=>{
@@ -121,12 +112,13 @@ btns.forEach((button)=>{button.addEventListener('click', ()=>{
 function checkScore(player, computer, pRoundString){
     if(player===5 || computer===5){
 
-        dialog2Ele.textContent= pRoundString;
-
+        //dialog2Ele.textContent= pRoundString;
+        
         playerScore = 0;
         computerScore = 0;
         playerScoreEle.textContent = 0;
         computerScoreEle.textContent = 0;
+        
         
         return true;
     }
@@ -142,10 +134,16 @@ function game(answer){
 
     playerScoreEle.textContent = playerScore;
     computerScoreEle.textContent = computerScore;
-    dialog2Ele.textContent= "You choose: " + answer +". " + "Computer choose: " + cChoice + ". ";
+    let p1 = document.createElement('p');
+    p1.classList.add('dialog2');
+    p1.textContent= "You choose: " + answer +". " + "Computer choose: " + cChoice + ". ";
+    gameDiv.insertBefore(p1,referenceNode.nextSibling);
+    
+    //dialog2Ele.textContent= "You choose: " + answer +". " + "Computer choose: " + cChoice + ". ";
 
     if(pRoundString === "Draw"){
-        dialog2Ele.textContent= pRoundString + ": " + "You choose: " + answer +". " + "Computer choose: " + cChoice+ ". ";
+        p1.textContent= pRoundString + ": " + "You choose: " + answer +". " + "Computer choose: " + cChoice + ". ";
+        gameDiv.insertBefore(p1,referenceNode.nextSibling);
         
     }
 
